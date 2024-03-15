@@ -1,0 +1,1123 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Form")
+Gui.Form..Size(920,485)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.GsGcDisplay.Create(GsGridControl)
+Gui.Form.GsGcDisplay.Enabled(True)
+Gui.Form.GsGcDisplay.Visible(True)
+Gui.Form.GsGcDisplay.Zorder(0)
+Gui.Form.GsGcDisplay.Size(515,370)
+Gui.Form.GsGcDisplay.Position(400,80)
+Gui.Form.GsGcDisplay.Anchor(15)
+Gui.Form.frmAverages.Create(Frame)
+Gui.Form.frmAverages.Enabled(True)
+Gui.Form.frmAverages.Visible(True)
+Gui.Form.frmAverages.Zorder(0)
+Gui.Form.frmAverages.Size(215,70)
+Gui.Form.frmAverages.Position(400,5)
+Gui.Form.frmAverages.Caption("P.O. Due Date")
+Gui.Form.frmAverages.FontName("Tahoma")
+Gui.Form.frmAverages.FontSize(8.25)
+Gui.Form.frmAverages.BorderStyle(1)
+Gui.Form.lbl1.Create(Label,"Average",True,41,13,0,6,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.lbl1.Parent("frmAverages")
+Gui.Form.txtDueWAvg.Create(TextBox,"",True,100,20,0,110,45,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDueWAvg.Parent("frmAverages")
+Gui.Form.txtDueAvg.Create(TextBox,"",True,100,20,0,5,45,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDueAvg.Parent("frmAverages")
+Gui.Form.lbl2.Create(Label,"Weighted Average",True,90,13,0,111,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.lbl2.Parent("frmAverages")
+Gui.Form.GsGcVendor.Create(GsGridControl)
+Gui.Form.GsGcVendor.Enabled(True)
+Gui.Form.GsGcVendor.Visible(True)
+Gui.Form.GsGcVendor.Zorder(0)
+Gui.Form.GsGcVendor.Size(377,370)
+Gui.Form.GsGcVendor.Position(5,80)
+Gui.Form.GsGcVendor.Anchor(7)
+Gui.Form.frmControls.Create(Frame)
+Gui.Form.frmControls.Enabled(True)
+Gui.Form.frmControls.Visible(True)
+Gui.Form.frmControls.Zorder(0)
+Gui.Form.frmControls.Size(378,70)
+Gui.Form.frmControls.Position(5,5)
+Gui.Form.frmControls.Caption("Calculate")
+Gui.Form.frmControls.FontName("Tahoma")
+Gui.Form.frmControls.FontSize(8.25)
+Gui.Form.frmControls.BorderStyle(1)
+Gui.Form.txtLate.Create(TextBox,"0",True,35,20,0,260,45,True,2,"Tahoma",8.25,,1)
+Gui.Form.txtLate.Parent("frmControls")
+Gui.Form.txtLate.NumericOnly(2)
+Gui.Form.txtEarly.Create(TextBox,"0",True,35,20,0,220,45,True,2,"Tahoma",8.25,,1)
+Gui.Form.txtEarly.Parent("frmControls")
+Gui.Form.txtEarly.NumericOnly(2)
+Gui.Form.lbl6.Create(Label,"Late",True,21,13,0,261,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl6.BorderStyle(0)
+Gui.Form.lbl6.Parent("frmControls")
+Gui.Form.dtp1.Create(DatePicker)
+Gui.Form.dtp1.Enabled(True)
+Gui.Form.dtp1.Visible(True)
+Gui.Form.dtp1.Zorder(0)
+Gui.Form.dtp1.Size(100,20)
+Gui.Form.dtp1.Position(5,45)
+Gui.Form.dtp1.CheckBox(False)
+Gui.Form.dtp1.FontName("Tahoma")
+Gui.Form.dtp1.FontSize(8.25)
+Gui.Form.dtp1.Parent("frmControls")
+Gui.Form.cmdCalculate.Create(Button)
+Gui.Form.cmdCalculate.Enabled(True)
+Gui.Form.cmdCalculate.Visible(True)
+Gui.Form.cmdCalculate.Zorder(0)
+Gui.Form.cmdCalculate.Size(75,23)
+Gui.Form.cmdCalculate.Position(300,43)
+Gui.Form.cmdCalculate.Caption("Calculate")
+Gui.Form.cmdCalculate.FontName("Tahoma")
+Gui.Form.cmdCalculate.FontSize(8.25)
+Gui.Form.cmdCalculate.Parent("frmControls")
+Gui.Form.cmdCalculate.Event(Click,cmdCalculate_Click)
+Gui.Form.lbl5.Create(Label,"Early",True,24,13,0,221,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl5.BorderStyle(0)
+Gui.Form.lbl5.Parent("frmControls")
+Gui.Form.dtp2.Create(DatePicker)
+Gui.Form.dtp2.Enabled(True)
+Gui.Form.dtp2.Visible(True)
+Gui.Form.dtp2.Zorder(0)
+Gui.Form.dtp2.Size(100,20)
+Gui.Form.dtp2.Position(115,45)
+Gui.Form.dtp2.CheckBox(False)
+Gui.Form.dtp2.FontName("Tahoma")
+Gui.Form.dtp2.FontSize(8.25)
+Gui.Form.dtp2.Parent("frmControls")
+Gui.Form.lbl4.Create(Label,"End Date",True,44,13,0,116,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl4.BorderStyle(0)
+Gui.Form.lbl4.Parent("frmControls")
+Gui.Form.lbl3.Create(Label,"Start Date",True,50,13,0,6,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl3.BorderStyle(0)
+Gui.Form.lbl3.Parent("frmControls")
+Gui.Form.cmdExport.Create(Button)
+Gui.Form.cmdExport.Enabled(True)
+Gui.Form.cmdExport.Visible(True)
+Gui.Form.cmdExport.Zorder(0)
+Gui.Form.cmdExport.Size(75,23)
+Gui.Form.cmdExport.Position(840,51)
+Gui.Form.cmdExport.Caption("Export")
+Gui.Form.cmdExport.FontName("Tahoma")
+Gui.Form.cmdExport.FontSize(8.25)
+Gui.Form.cmdExport.Anchor(9)
+Gui.Form.cmdExport.Event(Click,cmdExport_Click)
+Gui.Form.frmCommitment.Create(Frame)
+Gui.Form.frmCommitment.Enabled(True)
+Gui.Form.frmCommitment.Visible(True)
+Gui.Form.frmCommitment.Zorder(0)
+Gui.Form.frmCommitment.Size(215,70)
+Gui.Form.frmCommitment.Position(620,5)
+Gui.Form.frmCommitment.Caption("Commitment Date")
+Gui.Form.frmCommitment.FontName("Tahoma")
+Gui.Form.frmCommitment.FontSize(8.25)
+Gui.Form.frmCommitment.BorderStyle(1)
+Gui.Form.lbl8.Create(Label,"Weighted Average",True,90,13,0,111,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl8.BorderStyle(0)
+Gui.Form.lbl8.Parent("frmCommitment")
+Gui.Form.txtComWAvg.Create(TextBox,"",True,100,20,0,110,45,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtComWAvg.Parent("frmCommitment")
+Gui.Form.lbl7.Create(Label,"Average",True,41,13,0,6,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl7.BorderStyle(0)
+Gui.Form.lbl7.Parent("frmCommitment")
+Gui.Form.txtComAvg.Create(TextBox,"",True,100,20,0,5,45,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtComAvg.Parent("frmCommitment")
+Gui.Form.GsGcGvExport.Create(GsGridControl)
+Gui.Form.GsGcGvExport.Enabled(True)
+Gui.Form.GsGcGvExport.Visible(False)
+Gui.Form.GsGcGvExport.Zorder(0)
+Gui.Form.GsGcGvExport.Size(355,126)
+Gui.Form.GsGcGvExport.Position(385,49)
+Gui.Form.cmdReportCard.Create(Button)
+Gui.Form.cmdReportCard.Enabled(True)
+Gui.Form.cmdReportCard.Visible(True)
+Gui.Form.cmdReportCard.Zorder(0)
+Gui.Form.cmdReportCard.Size(75,23)
+Gui.Form.cmdReportCard.Position(841,24)
+Gui.Form.cmdReportCard.Anchor(9)
+Gui.Form.cmdReportCard.Caption("Report Card")
+Gui.Form.cmdReportCard.FontName("Tahoma")
+Gui.Form.cmdReportCard.FontSize(8.25)
+Gui.Form.cmdReportCard.Event(Click,cmdReportCard_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+f.Intrinsic.Control.CallSub(createDisplayDT)
+f.Intrinsic.Control.CallSub(loadGridProperties)
+f.Intrinsic.Control.CallSub(SetContextMenus)
+gui.Form..Show
+f.Intrinsic.Control.CallSub(refreshDT)
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project ProjectName.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.createDisplayDT.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.Create("displayDT", True)
+	f.Data.DataTable.AddColumn("displayDT", "Vendor", "String")
+	f.Data.DataTable.AddColumn("displayDT", "Name", "String")
+	f.Data.DataTable.AddColumn("displayDT", "EaseOfBusiness", "String")
+	'Due Date Column
+	f.Data.DataTable.AddColumn("displayDT", "DEarly", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "DOntime", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "DLate", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "strDEarly", "String")
+	f.Data.DataTable.AddColumn("displayDT", "strDOntime", "String")
+	f.Data.DataTable.AddColumn("displayDT", "strDLate", "String")	
+	f.Data.Datatable.AddExpressionColumn("displayDT", "DAllOntime", "Float", "DEarly + DOntime")
+	f.Data.DataTable.AddColumn("displayDT", "DWOnTime", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "strDWOnTime", "String")
+	f.Data.Datatable.AddExpressionColumn("displayDT", "DALL", "Float", "DEarly + DOntime + DLate")
+	'Commitment Date Column
+	f.Data.DataTable.AddColumn("displayDT", "CEarly", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "COntime", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "CLate", "Float", 0)	
+	f.Data.DataTable.AddColumn("displayDT", "strCEarly", "String")
+	f.Data.DataTable.AddColumn("displayDT", "strCOntime", "String")
+	f.Data.DataTable.AddColumn("displayDT", "strCLate", "String")
+	f.Data.Datatable.AddExpressionColumn("displayDT", "CAllOntime", "Float", "CEarly + COntime")
+	f.Data.DataTable.AddColumn("displayDT", "CWOnTime", "Float", 0)
+	f.Data.DataTable.AddColumn("displayDT", "strCWOnTime", "String")
+	f.Data.Datatable.AddExpressionColumn("displayDT", "CALL", "Float", "CEarly + COntime + CLate")
+	f.Data.DataTable.AddColumn("displayDT","NumReceipts","Float",0)
+	'Create Grids.
+	f.Data.DataView.Create("displayDT", "displayDV", 22)
+	f.Data.DataView.Create("displayDT", "displayDVEODB", 22)
+	gui.Form.GsGcDisplay.AddGridviewFromDataview("displayGV", "displayDT", "displayDV")
+	gui.Form.GsGcDisplay.MainView("displayGV")
+
+	f.Data.DataView.ToDataTable("displayDT", "displayDV", "displayDT$childDT", true)
+	'Remove Due Date Columns
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "DEarly")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "DOntime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "DLate")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strDEarly")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strDOntime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strDLate")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "DAllOntime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "DWOnTime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strDWOnTime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "DALL")
+	f.Data.DataTable.RemoveColumn("displayDT$childDT", "NumReceipts")
+	'Remove Commitement Date Columns
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "CEarly")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "COntime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "CLate")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strCEarly")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strCOntime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strCLate")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "CAllOntime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "CWOnTime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "strCWOnTime")
+	f.Data.Datatable.RemoveColumn("displayDT$childDT", "CALL")
+	
+	f.Data.DataTable.AddColumn("displayDT$childDT", "PO", "String")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "PO_Line", "String")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "Part", "String")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "Qty_Received", "Float")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "Qty_Order", "Float")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "QtyRejected", "Float")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "PoDate", "Date")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "DueDate", "Date")
+	f.Data.Datatable.AddColumn("displayDT$childDT", "CommitmentDate", "Date")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "ReceiptDate", "Date")
+	
+	f.Data.DataTable.AddColumn("displayDT$childDT", "DEarly", "Long", 0)
+	f.Data.DataTable.AddColumn("displayDT$childDT", "DOntime", "Long", 0)
+	f.Data.DataTable.AddColumn("displayDT$childDT", "DLate", "Long", 0)
+	f.Data.Datatable.AddExpressionColumn("displayDT$childDT", "DAllOntime", "Long", "DEarly+DOntime")
+	
+	f.Data.DataTable.AddColumn("displayDT$childDT", "CEarly", "Long", 0)
+	f.Data.DataTable.AddColumn("displayDT$childDT", "COntime", "Long", 0)
+	f.Data.DataTable.AddColumn("displayDT$childDT", "CLate", "Long", 0)
+	f.Data.Datatable.AddExpressionColumn("displayDT$childDT", "CAllOntime", "Long", "CEarly+COntime")
+	
+	f.Data.DataTable.AddColumn("displayDT$childDT", "NetDays", "Long")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "CNetDays", "Long")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "Weight", "Float", 0)
+	
+	f.Data.Datatable.AddExpressionColumn("displayDT$childDT", "DWeight", "Float", "DAllOntime * Weight")
+	f.Data.Datatable.AddExpressionColumn("displayDT$childDT", "CWeight", "Float", "CAllOntime * Weight")
+	
+	f.Data.DataTable.AddColumn("displayDT$childDT", "strDWeight", "String")
+	f.Data.DataTable.AddColumn("displayDT$childDT", "strCWeight", "String")
+	
+	f.Data.Datatable.AddRelation("displayDT", "Vendor", "displayDT$childDT", "Vendor","Receipts")
+	
+	f.Data.DataView.Create("displayDT$childDT", "childDV", 22)
+	gui.Form.GsGcDisplay.AddGridviewFromDataview("childGV", "displayDT", "childDV")
+	
+	
+	f.Data.DataView.ToDataTable("displayDT", "childDV", "gcExDT", True)
+	f.Data.DataView.Create("gcExDT", "gcExDV", 22)
+	gui.Form.GsGcGvExport.AddGridviewFromDataview("gcExGV", "gcExDT", "gcExDV")
+	gui.Form.GsGcGvExport.MainView("gcExGV")
+	
+	f.Data.DataTable.Create("vendorDT", true)
+	f.Data.DataTable.AddColumn("vendorDT", "Selected", "Boolean", False)
+	f.Data.DataTable.AddColumn("vendorDT", "Vendor", "String")
+	f.Data.DataTable.AddColumn("vendorDT", "Name", "String")
+	f.Data.DataTable.AddColumn("vendorDT", "Critical", "Boolean", False)
+	
+	f.Data.DataView.Create("vendorDT", "vendorDV", 22)
+	f.Data.DataView.Create("vendorDT", "vendSelectedDV", 22, "Selected = 'True'", "")
+	f.Data.DataView.Create("vendorDT", "vendCriticalDV", 22, "Critical = 'True'", "")
+	
+	gui.Form.GsGcVendor.AddGridviewFromDataview("vendorGV", "vendorDT", "vendorDV")
+	gui.Form.GsGcVendor.MainView("vendorGV")
+	
+	'Export Table
+	f.Data.Datatable.Create("ExportDT", True)
+	f.Data.Datatable.AddColumn("ExportDT", "col1", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col2", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col3", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col4", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col5", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col6", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col7", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col8", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col9", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col10", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col11", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col12", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col13", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col14", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col15", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col16", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col17", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col18", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col19", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col20", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col21", String, " ")
+	f.Data.Datatable.AddColumn("ExportDT", "col22", String, " ")
+	'Export DV
+	f.Data.DataView.Create("ExportDT", "ExportDV", 22)
+	
+	'NCMR data
+	f.ODBC.Connection!con.opencompanyconnection(500)
+	f.Data.DataTable.CreateFromSQL("displayDT$dtNCMR","con","select a.control_number as NCMR, a.disposition_seq as Disp_Seq, a.qty_disposed, a.disposition_Action, a.date_disposed, b.part, b.purchase_order as PO, b.po_line as Line, b.vendor from v_quality_disp a inner join v_quality b on a.control_number=b.control_number where 1=0",True)
+	f.ODBC.Connection!con.Close
+	f.Data.DataView.Create("displayDT$dtNCMR","dvNCMR",22)
+	f.Data.DataTable.AddRelation("displayDT","Vendor","displayDT$dtNCMR","Vendor","NCMR")
+	gui.Form.GsGcDisplay.AddGridviewFromDataview("gvNCMR", "displayDT", "dvNCMR")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDisplayDT.End
+
+Program.Sub.loadGridProperties.Start
+v.Local.iCnt.Declare
+v.Local.sFields.Declare
+v.Local.iVisibleIndex.Declare
+
+f.Intrinsic.Control.Try
+	'Display Grid Properties
+	f.Intrinsic.String.Split(v.DataTable.displayDT.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcDisplay.SetColumnProperty("displayGV", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	'GridView Properties
+	gui.Form.GsGcDisplay.BestFitColumns("displayGV")
+	gui.Form.GsGcDisplay.SetGridviewProperty("displayGV", "OptionsViewColumnAutoWidth", False)
+	'gui.Form.GsGcDisplay.SetGridviewProperty("displayGV", "OptionsViewShowAutoFilterRow", True)
+	'gui.Form.GsGcDisplay.SetGridviewProperty("displayGV", "OptionsFindAlwaysVisible", True)
+	'gui.Form.GsGcDisplay.SetGridviewProperty("displayGV", "Showgrouppanel", True)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("displayGV","OptionsDetailShowDetailTabs",True)
+	
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Vendor", "CellHAlignment", "Center")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Vendor", "Width", 75)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Name", "Width", 200)
+	
+	'Caption
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Vendor", "Caption", "Vendor")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Name", "Caption", "Name")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "EaseOfBusiness", "Caption", "Ease of Business")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strDEarly", "Caption", "Due Early %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strDOntime", "Caption", "Due Ontime %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strDLate", "Caption", "Due Late %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strDWOntime", "Caption", "Due Weight Ontime %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strCEarly", "Caption", "Commitment Early %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strCOntime", "Caption", "Commitment Ontime %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strCLate", "Caption", "Commitment Late %")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "strCWOntime", "Caption", "Commitment Weight Early %")
+	
+	'Dropdown values for ease of business
+	gui.Form.GsGcDisplay.ColumnEdit("displayGV","EaseOfBusiness","Dropdownlist","0%*!*25%*!*50%*!*75%*!*100%")
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "EaseOfBusiness", "ReadOnly", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "EaseOfBusiness", "AllowEdit", True)
+	
+	'Possible Column Properties 
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "ReadOnly", False)
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "AllowEdit", True)
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "HeaderHAlignment", "Center")
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "CellHAlignment", "Center")
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "Caption", "Default")
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "Visible", False)
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "DisplayCustomDatetime", "d")
+	
+	'Visible
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "DEarly", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "DOntime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "DLate", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "DAllOntime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "DWOnTime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "DALL", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "CEarly", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "COntime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "CLate", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "CAllOntime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "CWOnTime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "CALL", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "NumReceipts", "Visible", False)
+	
+	'VisibleIndex
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "VisibleIndex", v.Local.iVisibleIndex)
+	'gui.Form.GsGcDisplay.SetColumnProperty("displayGV", "Default", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+	'Conditional Formatting
+	'gui.Form.GsGcDisplay.AddStyleFormatCondition("displayGV", "columnName", "TagName", "EQUAL", 1)
+	'gui.Form.GsGcDisplay.SetStyleFormatConditionProperty("displayGV", "columnName", "TagName", "ApplyToRow", True) 
+	'gui.Form.GsGcDisplay.SetStyleFormatConditionProperty("displayGV", "columnName", "TagName", "BackColor", "Color") 
+	
+	'Export Grid Properties
+	'Visible
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "DEarly", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "DOntime", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "DLate", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "DAllOntime", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "CEarly", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "COntime", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "CLate", "Visible", False)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "CAllOntime", "Visible", False)
+	'VisibleIndex
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "PoDate", "VisibleIndex", v.Local.iVisibleIndex)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "DueDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "CommitmentDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "ReceiptDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "Vendor", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "Name", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "PO", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "PO_Line", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "Part", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "Qty_Received", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "Qty_Order", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "QtyRejected", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "Weight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "NetDays", "VisibleIndex", v.Local.iVisibleIndex.++)	
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "DWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "strDWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "CNetDays", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "CWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcGvExport.SetColumnProperty("gcExGV", "strCWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+	f.Intrinsic.String.Split(v.DataTable.vendorDT.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcVendor.SetColumnProperty("vendorGV", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	
+	'GridView Properties
+	gui.Form.GsGcVendor.BestFitColumns("vendorGV")
+	gui.Form.GsGcVendor.SetGridviewProperty("vendorGV", "OptionsViewColumnAutoWidth", False)
+	
+	'Possible Column Properties 
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Selected", "Caption", " ")
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Selected", "ReadOnly", False)
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Selected", "AllowEdit", True)
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Selected", "Width", 50)
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Vendor", "CellHAlignment", "Center")
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Vendor", "Width", 65)
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Name", "Width", 175)
+	gui.Form.GsGcVendor.SetColumnProperty("vendorGV", "Critical", "Width", 50)
+
+	'Child Properties
+	f.Intrinsic.String.Split(v.DataTable.displayDT$childDT.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcDisplay.SetColumnProperty("childGV", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'GridView Properties
+	gui.Form.GsGcDisplay.BestFitColumns("childGV")
+	gui.Form.GsGcDisplay.SetGridviewProperty("childGV", "OptionsViewColumnAutoWidth", False)
+	
+	'Visible
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DAllOntime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CAllOntime", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Weight", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DWeight", "Visible", False)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CWeight", "Visible", False)
+
+	'Visble
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DueDate", "DisplayCustomDatetime", "d")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CommitmentDate", "DisplayCustomDatetime", "d")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "ReceiptDate", "DisplayCustomDatetime", "d")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PoDate", "DisplayCustomDatetime", "d")
+	
+	'VisibleIndex
+	v.Local.iVisibleIndex.Set(0)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Vendor", "VisibleIndex", v.Local.iVisibleIndex)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Name", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PO", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PO_Line", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Part", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Qty_Order", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Qty_Received", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "QtyRejected", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PoDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DueDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CommitmentDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "ReceiptDate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DEarly", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DOntime", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DLate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "NetDays", "VisibleIndex", v.Local.iVisibleIndex.++)
+	'gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "strDWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CEarly", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "COntime", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CLate", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CNetDays", "VisibleIndex", v.Local.iVisibleIndex.++)
+	'gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "strCWeight", "VisibleIndex", v.Local.iVisibleIndex.++)
+	
+	'Caption
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Vendor", "Caption", "Vendor")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Name", "Caption", "Name")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PO", "Caption", "P.O.")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PO_Line", "Caption", "Line")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Part", "Caption", "Part")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Qty_Order", "Caption", "Qty Ordered")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Qty_Received", "Caption", "Qty Received")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "QtyRejected", "Caption", "Qty Rejected")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "PoDate", "Caption", "P.O. Date")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DueDate", "Caption", "Due Date")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CommitmentDate", "Caption", "Commitment Date")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "ReceiptDate", "Caption", "Receipt Date")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DEarly", "Caption", "Due Early")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DOntime", "Caption", "Due Ontime")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DLate", "Caption", "Due Late")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "NetDays", "Caption", "Due Net Days")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DWeight", "Caption", "Due Weight")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "strDWeight", "Caption", "Due Weight %")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CEarly", "Caption", "Commitment Early")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "COntime", "Caption", "Commitment Ontime")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CLate", "Caption", "Commitment Late")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CNetDays", "Caption", "Commitment Net Days")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CWeight", "Caption", "Commitment Weight")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "strCWeight", "Caption", "Commitment Weight %")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "DAllOntime", "Caption", "Due All Ontime")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "CAllOntime", "Caption", "Commitment All Ontime")
+	gui.Form.GsGcDisplay.SetColumnProperty("childGV", "Weight", "Caption", "Weight")
+	
+	'NCMR grid
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","MultiSelect",True)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","OptionBehaviorEditable",False)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","ReadOnly",True)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","AllowSort",True)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","AllowFilter",True)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","OptionsViewShowGroupPanel",False)
+	Gui.Form.GsGcDisplay.SetGridViewProperty("gvNCMR","AllowColumnMoving",False)
+	
+	'Caption
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "NCMR", "Caption", "NCMR")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "Disp_Seq", "Caption", "Seq")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "qty_disposed", "Caption", "Qty Disposed")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "disposition_Action", "Caption", "Action")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "date_disposed", "Caption", "Date")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "part", "Caption", "Part")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "PO", "Caption", "PO")
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "Line", "Caption", "Line")
+	
+	'Date
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "date_disposed", "DisplayCustomDatetime", "d")
+	
+	'Visible
+	gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", "date_disposed", "Visible", False)
+	
+	'Child Properties
+	f.Intrinsic.String.Split(v.DataTable.displayDT$dtNCMR.FieldNames, "*!*", v.Local.sFields)
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.sFields.UBound, 1)
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "HeaderFontBold", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "Visible", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "ReadOnly", True)
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "AllowEdit", False)
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "HeaderHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "CellHAlignment", "Near")
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "HeaderBackColor", v.Color.GSS)
+		gui.Form.GsGcDisplay.SetColumnProperty("gvNCMR", v.Local.sFields(v.Local.iCnt), "HeaderForeColor", v.Color.White)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadGridProperties.End
+
+Program.Sub.refreshDT.Start
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.Datatable.CreateFromSQL("tempVendorDT", "con", "Select a.Vendor, a.Name_Vendor as Name, convert(if(b.critical_suppl='Y',1,0),sql_bit) as Critical from V_VENDOR_MASTER a inner join v_vendor_addl b on a.vendor=b.vendor")
+	f.ODBC.Connection!con.Close
+	
+	f.Data.Datatable.DeleteRow("vendorDT")
+	f.Data.Datatable.AcceptChanges("vendorDT")
+	f.Data.Datatable.Merge("tempVendorDT", "vendorDT", false, 2)
+	f.Data.Datatable.AcceptChanges("vendorDT")
+	f.Data.Datatable.Close("tempVendorDT")
+	
+	gui.Form.GsGcVendor.BestFitColumns("vendorGV")
+	gui.Form.GsGcDisplay.BestFitColumns("displayGV")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.refreshDT.End
+
+Program.Sub.cmdCalculate_Click.Start
+v.Local.sVendors.Declare
+v.Local.sSQL.Declare
+v.Local.sFilter.Declare
+
+v.Local.sVendor.Declare
+v.Local.dDueDate.Declare
+v.Local.dRcvDate.Declare
+
+v.Local.dStart.Declare
+v.Local.dEnd.Declare
+
+v.Local.iNetDays.Declare
+v.Local.iTotal.Declare
+v.Local.fWTotal.Declare
+v.Local.iRowCnt.Declare
+v.Local.fPercent.Declare
+
+v.Local.iEarlyBound.Declare
+v.Local.iLateBound.Declare
+
+v.Local.fCurrentTotalQty.Declare
+v.Local.fRecvdQty.Declare
+v.Local.fWeight.Declare
+v.Local.iOntime.Declare
+
+v.Local.fAverage.Declare
+v.Local.sAvgControl.Declare
+v.Local.iCnt.Declare
+
+v.Local.fNumReceipts.Declare(Float,0)
+f.Intrinsic.Control.Try
+	'f.Data.Datatable.SetValue("vendorDT", -1, "Selected", True)
+	gui.Form..Enabled(False)
+	f.Intrinsic.UI.InvokeWaitDialog("Calculating")
+	'Get Dates
+	v.Local.dStart.Set(v.Screen.Form!dtp1.Value)
+	v.Local.dEnd.Set(v.Screen.Form!dtp2.Value)
+	
+	
+	'Get Bounds
+	v.Local.iEarlyBound.Set(v.Screen.Form!txtEarly.Text)
+	f.Intrinsic.Math.Mult(v.Local.iEarlyBound, -1, v.Local.iEarlyBound)
+	v.Local.iLateBound.Set(v.Screen.Form!txtLate.Text)
+	'Get Vendor List.	
+	f.Data.DataView.ToString("vendorDT", "vendSelectedDV", "Vendor", "*!*", "','", v.Local.sVendors)
+	'Get tmp Display
+	f.Data.DataView.ToDataTable("vendorDT", "vendSelectedDV", "tmpDisplayDT")
+	f.Data.Datatable.RemoveColumn("tmpDisplayDT", "Selected")
+	'Get tmp child 
+	f.Intrinsic.String.Build("select distinct A.Vendor, A.vendor as name, A.part, A.location, A.purchase_order as po, A.po_line, A.date_received ReceiptDate, A.date_po as PoDate, A.date_due as DueDate, B.ORIG_DUE_DATE AS CommitmentDate, A.qty_order, sum(A.qty_received) as Qty_Received, sum(A.qty_reject) as QtyRejected  from V_PO_HISTORY A INNER JOIN V_PO_LINES B ON A.purchase_order = B.purchase_order and  A.po_line = B.record_no where A.date_received <> '1900-01-01' and A.vendor in ('{0}') and A.date_due > '{1}' and A.date_due < '{2}' group by a.vendor, A.part, A.location, A.purchase_order, A.po_line, A.date_received, A.date_po, A.date_due, B.ORIG_DUE_DATE, A.qty_order order by A.purchase_order, A.po_line asc;", v.Local.sVendors, v.Local.dStart.PervasiveDate, v.Local.dEnd.PervasiveDate, v.Local.sSQL)
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.Datatable.CreateFromSQL("tmpChildDT", "con", v.Local.sSQL)
+		f.Data.Dictionary.CreateFromSQL("vendorNameDict", "con", "Select Vendor, Name_Vendor from V_VENDOR_MASTER")
+		
+		f.Intrinsic.String.Build("select a.control_number as NCMR, a.disposition_seq as Disp_Seq, a.qty_disposed, a.disposition_Action, a.date_disposed, b.part, b.purchase_order as PO, b.po_line as Line, b.vendor from v_quality_disp a inner join v_quality b on a.control_number=b.control_number where vendor in ('{0}') and a.date_disposed >= '{1}' and a.date_disposed <= '{2}' and b.purchase_order<>'0000000'",v.local.sVendors,v.Local.dStart.PervasiveDate,v.Local.dEnd.PervasiveDate,v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtNCMRTemp","con",v.Local.sSQL,True)
+	f.ODBC.Connection!con.Close
+	'Fill From Dictionary
+	f.Data.Dictionary.SetDefaultReturn("vendorNameDict", " ")
+	f.Data.Datatable.FillFromDictionary("tmpChildDT", "vendorNameDict", "Name")
+	f.Data.Dictionary.Close("vendorNameDict")
+	'Delete current Display and Child
+	f.Data.Datatable.DeleteRow("displayDT")
+	f.Data.Datatable.AcceptChanges("displayDT")
+	f.Data.Datatable.DeleteRow("displayDT$ChildDT")
+	f.Data.Datatable.AcceptChanges("displayDT$childDT")
+	f.Data.Datatable.DeleteRow("displayDT$dtNCMR")
+	f.Data.Datatable.AcceptChanges("displayDT$dtNCMR")
+	
+	'Merge new Data into Display and Child.
+	f.Data.Datatable.Merge("tmpDisplayDT", "displayDT", false, 2)
+	f.Data.Datatable.Merge("tmpChildDT", "displayDT$childDT", false, 2)
+	f.Data.Datatable.Merge("dtNCMRTemp", "displayDT$dtNCMR", false, 2)
+	f.Data.Datatable.AcceptChanges("displayDT$dtNCMR")
+	
+	'Gui.Form.GsGcDisplay.SetGridViewProperty("displayGV","OptionsDetailShowDetailTabs",True)
+	'Close Temps.
+	f.Data.Datatable.Close("tmpDisplayDT")
+	f.Data.Datatable.Close("tmpChildDT")
+	f.Data.DataTable.Close("dtNCMRTemp")
+	
+	'Loop through Po Lines to get the date difference 
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.displayDT$ChildDT.RowCount--, 1)
+		'Get Dates onto variables.
+		v.Local.dDueDate.Set(v.DataTable.displayDT$ChildDT(v.Local.iCnt).DueDate!FieldVal)
+		v.Local.dRcvDate.Set(v.DataTable.displayDT$ChildDT(v.Local.iCnt).ReceiptDate!FieldVal)
+		'Get Vendor.
+		v.Local.sVendor.Set(v.DataTable.displayDT$ChildDT(v.Local.iCnt).Vendor!FieldValTrim)
+		'Set Vendor Filter.
+		f.Intrinsic.String.Build("Vendor = '{0}'", v.Local.sVendor, v.Local.sFilter)
+		'Compute Current Total Qty and Get Current Recvd Qty
+		f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(QTY_ORDER)", v.Local.sFilter, v.Local.fCurrentTotalQty)
+		v.Local.fRecvdQty.Set(v.DataTable.displayDT$ChildDT(v.Local.iCnt).Qty_Received!FieldVal)
+		'Get weight
+		f.Intrinsic.Math.Div(v.Local.fRecvdQty, v.Local.fCurrentTotalQty, v.Local.fWeight)
+		f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "Weight", v.Local.fWeight)		
+		'Get difference between dates.
+		f.Intrinsic.Date.DateDiff("d", v.Local.dDueDate, v.Local.dRcvDate, v.Local.iNetDays)
+		'Set Net value of days (Difference Between Dates)
+		f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "NetDays", v.Local.iNetDays)
+		'Check if net days is lower than the  early bound, then set it as Early.
+		f.Intrinsic.Control.If(v.Local.iNetDays, <, v.Local.iEarlyBound)
+			f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "DEarly", 1)
+		f.Intrinsic.Control.EndIf
+		'Check if net Days is between early and late bound, then set it as Ontime.
+		f.Intrinsic.Control.If(v.Local.iNetDays, =>, v.Local.iEarlyBound, "AND", v.Local.iNetDays, <=, v.Local.iLateBound)
+			f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "DOntime", 1)
+		f.Intrinsic.Control.EndIf
+		'Check if net Dats is greater than the late bound, then set it as Late.
+		f.Intrinsic.Control.If(v.Local.iNetDays, >, v.Local.iLateBound)
+			f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "DLate", 1)
+		f.Intrinsic.Control.EndIf
+		'Commitment Date
+		'Get Dates onto variables.
+		v.Local.dDueDate.Set(v.DataTable.displayDT$ChildDT(v.Local.iCnt).CommitmentDate!FieldVal)
+		v.Local.dRcvDate.Set(v.DataTable.displayDT$ChildDT(v.Local.iCnt).ReceiptDate!FieldVal)
+		'Get difference between dates.
+		f.Intrinsic.Date.DateDiff("d", v.Local.dDueDate, v.Local.dRcvDate, v.Local.iNetDays)
+		'Set Net value of days (Difference Between Dates)
+		f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "CNetDays", v.Local.iNetDays)
+		'Check if net days is lower than the  early bound, then set it as Early.
+		f.Intrinsic.Control.If(v.Local.iNetDays, <, v.Local.iEarlyBound)
+			f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "CEarly", 1)
+		f.Intrinsic.Control.EndIf
+		'Check if net Days is between early and late bound, then set it as Ontime.
+		f.Intrinsic.Control.If(v.Local.iNetDays, =>, v.Local.iEarlyBound, "AND", v.Local.iNetDays, <=, v.Local.iLateBound)
+			f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "COntime", 1)
+		f.Intrinsic.Control.EndIf
+		'Check if net Dats is greater than the late bound, then set it as Late.
+		f.Intrinsic.Control.If(v.Local.iNetDays, >, v.Local.iLateBound)
+			f.Data.Datatable.SetValue("displayDT$childDT", v.Local.iCnt, "CLate", 1)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.displayDT.RowCount--, 1)
+		'Reset num receiopts
+		v.Local.fNumReceipts.Set(0)
+		'Get Vendor.
+		v.Local.sVendor.Set(v.DataTable.displayDT(v.Local.iCnt).Vendor!FieldValTrim)
+		'Set Vendor Filter.
+		f.Intrinsic.String.Build("Vendor = '{0}'", v.Local.sVendor, v.Local.sFilter)
+		'Compute count of PO Lines per Vendor
+		f.Data.Datatable.Compute("displayDT$ChildDT", "COUNT(Vendor)", v.Local.sFilter, v.Local.iRowCnt)
+		'Check is not empty/
+		f.Intrinsic.Control.If(v.Local.iRowCnt, =, 0)
+			'Set as 0
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "DEarly", 0, "DOntime", 0, "DLate", 0, "CEarly", 0, "COntime", 0, "CLate", 0)
+		f.Intrinsic.Control.Else
+			'Early
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(DEarly)", v.Local.sFilter, v.Local.iTotal)					
+			f.Intrinsic.Math.Div(v.Local.iTotal, v.Local.iRowCnt, v.Local.fPercent)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "DEarly", v.Local.fPercent)
+			'Early Weighted
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(CEarly)", v.Local.sFilter, v.Local.iTotal)	
+			f.Intrinsic.Math.Add(v.Local.iTotal.Float,v.Local.fNumReceipts,v.Local.fNumReceipts)
+			f.Intrinsic.Math.Div(v.Local.iTotal, v.Local.iRowCnt, v.Local.fPercent)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "CEarly", v.Local.fPercent)
+			'Ontime
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(DOntime)", v.Local.sFilter, v.Local.iTotal)
+			f.Intrinsic.Math.Div(v.Local.iTotal, v.Local.iRowCnt, v.Local.fPercent)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "DOntime", v.Local.fPercent)
+			'Ontime Weighted
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(COntime)", v.Local.sFilter, v.Local.iTotal)	
+			f.Intrinsic.Math.Add(v.Local.iTotal.Float,v.Local.fNumReceipts,v.Local.fNumReceipts)
+			f.Intrinsic.Math.Div(v.Local.iTotal, v.Local.iRowCnt, v.Local.fPercent)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "COntime", v.Local.fPercent)
+			'Late
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(DLate)", v.Local.sFilter, v.Local.iTotal)
+			f.Intrinsic.Math.Div(v.Local.iTotal, v.Local.iRowCnt, v.Local.fPercent)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "DLate", v.Local.fPercent)
+			'Late Weighted
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(CLate)", v.Local.sFilter, v.Local.iTotal)	
+			f.Intrinsic.Math.Add(v.Local.iTotal.Float,v.Local.fNumReceipts,v.Local.fNumReceipts)
+			f.Intrinsic.Math.Div(v.Local.iTotal, v.Local.iRowCnt, v.Local.fPercent)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "CLate", v.Local.fPercent)
+			'Weighted Averages
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(DWeight)", v.Local.sFilter, v.Local.fWTotal)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "DWOnTime", v.Local.fWTotal)
+			f.Data.Datatable.Compute("displayDT$ChildDT", "SUM(CWeight)", v.Local.sFilter, v.Local.fWTotal)
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "CWOnTime", v.Local.fWTotal)
+			'Total Number of receipts
+			f.Data.Datatable.SetValue("displayDT", v.Local.iCnt, "NumReceipts", v.Local.fNumReceipts)
+		f.Intrinsic.Control.EndIf		
+		'Set format for percentage.
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "DEarly", "strDEarly", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "DOntime", "strDOntime", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "DLate", "strDLate", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "CEarly", "strCEarly", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "COntime", "strCOntime", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "CLate", "strCLate", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "DWOnTime", "strDWOnTime", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT", -1, "CWOnTime", "strCWOnTime", "##0.00%")
+		
+		f.Data.Datatable.SetValueFormat("displayDT$childDT", -1, "DWeight", "strDWeight", "##0.00%")
+		f.Data.Datatable.SetValueFormat("displayDT$childDT", -1, "CWeight", "strCWeight", "##0.00%")
+		gui.Form.GsGcDisplay.ExpandMasterRow("displayGV", v.Local.iCnt)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	'Get Averages controls
+	'Average of Due Date On Time Txt
+	f.Data.Datatable.Compute("displayDT", "AVG(DAllOntime)", "DALL > 0 ", v.Local.fAverage)
+	f.Intrinsic.String.Format(v.Local.fAverage, "##0.00%", v.Local.sAvgControl)
+	gui.Form.txtDueAvg.Text(v.Local.sAvgControl)
+	'Weighted Average of Due Date On Time Txt
+	f.Data.Datatable.Compute("displayDT", "AVG(DWOnTime)", "DALL > 0 ", v.Local.fAverage)
+	f.Intrinsic.String.Format(v.Local.fAverage, "##0.00%", v.Local.sAvgControl)
+	gui.Form.txtDueWAvg.Text(v.Local.sAvgControl)
+	'Average of Commitment Date On Time Txt
+	f.Data.Datatable.Compute("displayDT", "AVG(CAllOntime)", "CALL > 0 ", v.Local.fAverage)
+	f.Intrinsic.String.Format(v.Local.fAverage, "##0.00%", v.Local.sAvgControl)
+	gui.Form.txtComAvg.Text(v.Local.sAvgControl)
+	'Weighted Average of Commitment Date On Time Txt
+	f.Data.Datatable.Compute("displayDT", "AVG(CWOnTime)", "CALL > 0 ", v.Local.fAverage)
+	f.Intrinsic.String.Format(v.Local.fAverage, "##0.00%", v.Local.sAvgControl)
+	gui.Form.txtComWAvg.Text(v.Local.sAvgControl)
+	
+	'Set all vendors to 0% ease of doing business
+	f.Data.Datatable.SetValue("displayDT",-1,"EaseOfBusiness","100%")
+	
+	
+	
+	gui.Form..Enabled(True)
+	f.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.Catch
+	gui.Form..Enabled(True)
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCalculate_Click.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.SetContextMenus.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	'Vendor selection grid
+	Gui.Form..ContextMenuCreate("ctxVendor")
+	Gui.Form.GsGcVendor.ContextMenuAttach("ctxVendor")
+	gui.Form..ContextMenuAddItem("ctxVendor","SelectAllRows",0,"Select All Rows")
+	gui.Form..ContextMenuAddItem("ctxVendor","DeselectAllRows",0,"Deselect All Rows")
+	gui.Form..ContextMenuAddItem("ctxVendor","SelectHighlightedRows",0,"Select Highlighted Rows")
+	gui.Form..ContextMenuAddItem("ctxVendor","DeselectHighlightedRows",0,"Deselect Highlighted Rows")		
+	gui.Form..ContextMenuAddItem("ctxVendor","SelectCriticalVendors",0,"Select Critical Vendors")
+	
+	Gui.Form..ContextMenuSetItemEventHandler("ctxVendor","SelectAllRows","MenuClickSelectAllRows")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxVendor","DeselectAllRows","MenuClickDeselectAllRows")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxVendor","SelectHighlightedRows","MenuClickSelectHighlightedRows")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxVendor","DeselectHighlightedRows","MenuClickDeselectHighlightedRows")	
+	Gui.Form..ContextMenuSetItemEventHandler("ctxVendor","SelectCriticalVendors","MenuClickSelectCriticalVendors")	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickSelectAllRows.Start
+'Select All Rows
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare	
+	f.Intrinsic.Control.If(v.DataTable.vendorDT.Exists)
+		f.Data.DataTable.SetValue("vendorDT",-1,"Selected",True)
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickSelectAllRows.End
+
+Program.Sub.MenuClickDeselectAllRows.Start
+'Deselect All Rows
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare		
+	f.Intrinsic.Control.If(v.DataTable.vendorDT.Exists)
+		f.Data.DataTable.SetValue("vendorDT",-1,"Selected",False)
+	f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickDeselectAllRows.End
+
+Program.Sub.MenuClickSelectHighlightedRows.Start
+'Select Highlighted Rows
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare	
+	V.Local.iCnt.Declare
+	v.Local.sRows.Declare
+	
+	gui.Form.GsGcVendor.GetSelectedRows("vendorGV",v.Local.sRows)
+	f.Intrinsic.String.Split(v.Local.sRows,"*!*",v.Local.sRows)
+	f.Intrinsic.Control.For(v.Local.icnt,0,v.Local.sRows.UBound,1)
+		f.Data.DataTable.SetValue("vendorDT",v.Local.sRows(v.Local.iCnt),"Selected",True)
+	f.Intrinsic.Control.Next(v.Local.icnt)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickSelectHighlightedRows.End
+
+Program.Sub.MenuClickDeselectHighlightedRows.Start
+'Deselect Hightlighted Rows
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare	
+	V.Local.iCnt.Declare
+	v.Local.sRows.Declare
+	
+	gui.Form.GsGcVendor.GetSelectedRows("vendorGV",v.Local.sRows)
+	f.Intrinsic.String.Split(v.Local.sRows,"*!*",v.Local.sRows)
+	f.Intrinsic.Control.For(v.Local.icnt,0,v.Local.sRows.UBound,1)
+		f.Data.DataTable.SetValue("vendorDT",v.Local.sRows(v.Local.iCnt),"Selected",False)
+	f.Intrinsic.Control.Next(v.Local.icnt)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickDeselectHighlightedRows.End
+
+Program.Sub.MenuClickSelectCriticalVendors.Start
+	v.Local.iCnt.Declare
+	
+	'Loop through the vendCriticalDV dataview to get the DT rows where critical suppliers are listed.
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataView.vendorDT!vendCriticalDV.RowCount--,1)
+		f.Data.DataTable.SetValue("vendorDT",v.DataView.vendorDT!vendCriticalDV(v.Local.iCnt).datatableindex,"Selected",True)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+Program.Sub.MenuClickSelectCriticalVendors.End
+
+Program.Sub.cmdExport_Click.Start
+v.Local.sFilePath.Declare
+v.Local.sFilter.Declare
+v.Local.sText.Declare
+
+v.Local.iCnt.Declare
+v.Local.iCnt2.Declare
+
+v.Local.dStart.Declare
+v.Local.dEnd.Declare
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.ShowSaveFileDialog("", "xlsx|*.xlsx", v.Local.sFilePath)
+	f.Intrinsic.Control.If(v.Local.sFilePath.Trim, <>, "***CANCEL***")
+				
+		f.Data.DataView.ToDataTable("displayDT", "childDV", "tempGcExDT")
+		f.Data.Datatable.DeleteRow("gcExDT")
+		f.Data.Datatable.AcceptChanges("gcExDT")
+		f.Data.Datatable.Merge("tempGcExDT", "gcExDT", false, 2)
+		f.Data.Datatable.Close("tempGcExDT")
+		f.Data.Datatable.AcceptChanges("gcExDT")
+		
+		gui.Form.GsGcGvExport.Export(v.Local.sFilePath, "xlsx")
+		
+		f.Intrinsic.Task.ShellExec(0,"open",v.Local.sFilePath,"","",1)
+		
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.cmdUnselect_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.Datatable.SetValue("vendorDT", -1, "Selected", 0)
+	f.Data.Datatable.AcceptChanges("vendorDT")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdUnselect_Click.End
+
+Program.Sub.cmdSelect_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.Datatable.SetValue("vendorDT", -1, "Selected", 1)
+	f.Data.Datatable.AcceptChanges("vendorDT")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSelect_Click.End
+
+Program.Sub.cmdReportCard_Click.Start
+	f.Intrinsic.Control.Try
+		v.Local.sSQL.Declare
+		v.Local.sEaseOfBusiness.Declare
+		v.Local.iCnt.Declare
+		v.Local.sOnTime.Declare
+		v.Local.fQuality.Declare
+		v.Local.fOverall.Declare
+		v.Local.sOverall.Declare
+		v.Local.fOrdered.Declare
+		v.Local.fReceived.Declare
+		v.Local.sFilter.Declare
+		v.Local.fAllReceipts.Declare
+		v.Local.fAllOnTime.Declare
+		v.Local.fAllLate.Declare
+		v.Local.fAllTotal.Declare
+		v.Local.fAllAccepted.Declare
+		v.Local.fAllRejected.Declare
+		v.Local.iRptID.Declare
+		v.Local.sParam.Declare
+		v.Local.sValue.Declare
+		v.Local.sReportPath.Declare
+		v.Local.iBIRunID.Declare
+		v.Local.iLogID.Declare
+		f.ODBC.Connection!con.opencompanyconnection(500)
+		
+		'Create datatable for reporting if it does not exist
+		f.Intrinsic.Control.If(v.DataTable.dtReport.Exists,=,False)
+			f.Data.DataTable.CreateFromSQL("dtReport","con","select * from gcg_5878_supp_perf where 1=0",True)
+		f.Intrinsic.Control.Else
+			f.Data.DataTable.DeleteRow("dtReport")
+		f.Intrinsic.Control.EndIf
+		
+		'Remove data from the custom table that was previously stored for this terminal
+		f.Intrinsic.String.Build("delete from gcg_5878_supp_perf where terminal='{0}'",v.Caller.Terminal,v.Local.ssql)
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		
+		'Get on time performance from commitment percentage, ease of doing business is self-explanatory, and quality performance from rejected %.  # of individual receipts per PO line shall come from PO_RECEIPTS.
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataView.displayDT!displaydv.RowCount--,1)
+			'Strip the percentages out before saving to the database
+			f.Intrinsic.String.Replace(v.DataView.displayDT!displaydv(v.Local.iCnt).strCWOnTime!FieldVal,"%","",v.Local.sOnTime)
+			f.Intrinsic.String.Replace(v.DataView.displayDT!displaydv(v.Local.iCnt).EaseOfBusiness!FieldVal,"%","",v.Local.sEaseOfBusiness)
+			
+			'Set Vendor Filter.
+			f.Intrinsic.String.Build("Vendor = '{0}'", v.DataView.displayDT!displaydv(v.Local.iCnt).Vendor!FieldVal, v.Local.sFilter)
+
+			'Get on time, late, accepted, and rejected stats
+			'f.Data.DataTable.Compute("displayDT","Sum(CAll)",v.Local.sFilter,v.Local.fAllReceipts)
+			f.Data.DataTable.Compute("displayDT$childDT","Sum(CAllOntime)",v.Local.sFilter,v.Local.fAllOnTime)
+			f.Data.DataTable.Compute("displayDT$childDT","Sum(CLate)",v.Local.sFilter,v.Local.fAllLate)
+			f.Intrinsic.Math.Add(v.Local.fAllOnTime,v.Local.fAllLate,v.Local.fAllTotal)
+			'On time percentage
+			f.Intrinsic.Control.If(v.Local.fAllOnTime,<>,0)
+				f.Intrinsic.Math.Div(v.Local.fAllTotal,v.Local.fAllOnTime,v.Local.fAllOnTime)
+				f.Intrinsic.Math.Mult(v.Local.fAllOnTime,100,v.Local.fAllOnTime)
+			f.Intrinsic.Control.EndIf
+			'Late percentage
+			f.Intrinsic.Control.If(v.Local.fAllLate,<>,0)
+				f.Intrinsic.Math.Div(v.Local.fAllTotal,v.Local.fAllLate,v.Local.fAllLate)
+				f.Intrinsic.Math.Mult(v.Local.fAllLate,100,v.Local.fAllLate)
+			f.Intrinsic.Control.EndIf
+			'Total qty rejected
+			f.Data.DataTable.Compute("displayDT$childDT","Sum(QtyRejected)",v.Local.sFilter,v.Local.fAllRejected)
+			'Total qty received
+			f.Data.DataTable.Compute("displayDT$childDT","Sum(Qty_Received)",v.Local.sFilter,v.Local.fReceived)
+			'Calculate the quality performance for the vendor: qty_received / qty_ordered
+			f.Intrinsic.Math.Add(v.Local.fAllRejected,v.local.fReceived,v.Local.fOrdered)
+			f.Intrinsic.Control.If(v.Local.fReceived,<>,0)
+				f.Intrinsic.Math.Div(v.Local.fReceived,v.local.fOrdered,v.Local.fQuality)
+			f.Intrinsic.Control.Else
+				v.Local.fQuality.Set(0)
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.Math.Mult(v.Local.fQuality,100,v.Local.fQuality)
+			
+			'Fill out the table with the data
+			f.Data.DataTable.AddRow("dtReport","Terminal",v.Caller.Terminal,"Vendor_Name",v.DataView.displayDT!displaydv(v.Local.iCnt).Name!FieldVal,"On_Time_Perf",v.Local.sOnTime,"QA_Perf",v.Local.fQuality,"Ease_Of_Business",v.Local.sEaseOfBusiness.Float,"Overall_Perf",0,"Vendor_Status","","Receipts",v.DataView.displayDT!displaydv(v.Local.iCnt).NumReceipts!FieldVal,"On_Time",v.Local.fAllOnTime,"Late",v.Local.fAllLate,"Items_Accepted",v.Local.fReceived,"Items_Rejected",v.Local.fAllRejected)
+			'Note: Overall Performance and Vendor Status will be calculated and controlled inside the report so that the settings can be easily modified by the customer in the future!
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		
+		'Save DT to DB
+		f.data.DataTable.SaveToDB("dtReport","con","GCG_5878_SUPP_PERF","TERMINAL*!*VENDOR_NAME",128)
+		
+		'Launch the report
+		f.Intrinsic.Control.If(v.Local.iRptID,<>,-1)
+			v.Local.sParam.Set("TERMINAL")
+			V.Local.sValue.Set(V.Caller.Terminal)			
+			f.Global.BI.GetIDFromName("GCG_5878_SUPPLIER_PERF.rpt",v.Local.iRptID)
+			f.Global.BI.PrintReport(v.Local.iRptID,0,v.Local.sParam,v.Local.sValue,"",False)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.UI.Msgbox("Report ID Not Found. Exiting.","Error > BI")
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.Finally
+		f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdReportCard_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$dduncan$}$20210401131936847$}$r0o+00bj735YsiGsQ60YIo/Zb+26OZQG21pIkAjD2cIWsHLSHLMV13t1kkILQzlVtdi/rZi2ktI=
+Program.Sub.Comments.End
